@@ -74,7 +74,7 @@ public class Zoo: DbContext
             for (var m = 0; m <= 9; m++)
             {
                 int id = n*10+m;
-                var animal = GenerateAnimal(id, $"animal_{id}", species.Id, random.Next(2), DateTime.Now, DateTime.Now);
+                var animal = GenerateAnimal(id, $"animal_{id}", species.Id, random.Next(2), DateTime.Now.AddDays(-random.Next(3000)), DateTime.Now);
                 modelBuilder.Entity<Animal>().HasData(animal);
             }
 
@@ -103,5 +103,7 @@ public class Zoo: DbContext
             DateOfAquisition = dateOfAquisition.ToUniversalTime(),   
         };   
     }
+
+
 
 }

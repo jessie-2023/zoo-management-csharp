@@ -78,5 +78,21 @@ public class AnimalsController: Controller
         return Ok(animals);
     }
 
+    // input a page size and a page number 
+    // return a list of animals corresponding with the the associated list of animals for the given page
+    // filtered by a search query that can search by species, classification (mammal/reptile/bird etc.), age (as a number not a date of birth), name and date the zoo acquired them
+
+    // [HttpGet("{type}")]
+    // public IActionResult Search([FromRoute] string type)
+    // {
+    //     var animals = new List<AnimalResponse> {};
+    //     foreach (var animal in _zoo.Animals.Include(animal => animal.Species))
+    //     {
+    //         animals.Add(AnimalToResponse(animal));
+    //     }
+
+    //     return Ok(animals);
+    // }
+
 }
 
