@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using ZooManagement.Enums;
 using ZooManagement.Models.Data;
 using ZooManagement.Models.Request;
 using ZooManagement.Models.Response;
@@ -82,17 +83,48 @@ public class AnimalsController: Controller
     // return a list of animals corresponding with the the associated list of animals for the given page
     // filtered by a search query that can search by species, classification (mammal/reptile/bird etc.), age (as a number not a date of birth), name and date the zoo acquired them
 
-    // [HttpGet("{type}")]
-    // public IActionResult Search([FromRoute] string type)
-    // {
-    //     var animals = new List<AnimalResponse> {};
-    //     foreach (var animal in _zoo.Animals.Include(animal => animal.Species))
-    //     {
-    //         animals.Add(AnimalToResponse(animal));
-    //     }
+    [HttpGet("search")]
+    public IActionResult Search([FromQuery] SearchAnimalRequest searchAnimalRequest)
+    {
+        var query = _zoo.Animals.Include(animal => animal.Species).AsQueryable();
+        if (!string.IsNullOrEmpty(searchAnimalRequest.Name))
+        {
+            query = query.Where(animal => animal.Name.Contains(searchAnimalRequest.Name));
+        }
 
-    //     return Ok(animals);
-    // }
+        if (!string.IsNullOrEmpty(searchAnimalRequest.SpeciesName))
+        {
+            query = query.Where(animal => animal.Species.Name.Contains(searchAnimalRequest.SpeciesName));
+        }
+
+        if (!string.IsNullOrEmpty(searchAnimalRequest.ClassificationName))
+        { 
+            if (Enum.TryParse<Classification>(searchAnimalRequest.ClassificationName, ignoreCase: true, out var classification))
+            {
+                query = query.Where(animal => animal.Species.Classification == classification);
+            }
+            else
+            {
+                query = Enumerable.Empty<Animal>().AsQueryable();
+            }
+        }
+
+        if (!string.IsNullOrEmpty(searchAnimalRequest.SexName))
+        { 
+            if (Enum.TryParse<Sex>(searchAnimalRequest.SexName, ignoreCase: true, out var sex))
+            {
+                query = query.Where(animal => animal.Sex == sex);
+            }
+            else
+            {
+                query = Enumerable.Empty<Animal>().AsQueryable();
+            }
+        }
+
+        var searchResult = query.ToList();
+
+        return Ok(searchResult);
+    }
 
 }
 
