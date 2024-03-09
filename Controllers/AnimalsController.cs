@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ZooManagement.Enums;
@@ -31,6 +32,7 @@ public class AnimalsController: Controller
             };
     }
 
+    /* create an endpoint to get an animal by it’s ID */
     [HttpGet("{id}")]
     public IActionResult GetById([FromRoute] int id)
     {
@@ -44,7 +46,8 @@ public class AnimalsController: Controller
         return Ok(AnimalToResponse(matchingAnimal));
     }
 
-    [HttpPost("add-an-animal")]
+    /* create an endpoint to add an animal to the database given the relevant information */
+    [HttpPost("add-an-animal")] 
     public IActionResult AddAnimal([FromBody] AddAnimalRequest addAnimalRequest)
     {
         if (addAnimalRequest == null)
@@ -63,10 +66,11 @@ public class AnimalsController: Controller
 
         _zoo.SaveChangesAsync();
         
-        // Return a success response (you can also return the created animal)
-        return Ok(newAnimal);
+        
+        return Ok(newAnimal); // Return a success response (you can also return the created animal)
     }
 
+    /* create an endpoint to list all the types of animals in the zoo */
     [HttpGet("list-all")]
     public IActionResult ListAll()
     {
@@ -79,10 +83,8 @@ public class AnimalsController: Controller
         return Ok(animals);
     }
 
-    // input a page size and a page number 
-    // return a list of animals corresponding with the the associated list of animals for the given page
-    // filtered by a search query that can search by species, classification (mammal/reptile/bird etc.), age (as a number not a date of birth), name and date the zoo acquired them
 
+    /* create an endpoint to deal with a paginated search feature on the frontend: page size/number, search by species, classification, age, name, acquiring date */
     [HttpGet("search")]
     public IActionResult Search([FromQuery] SearchAnimalRequest searchAnimalRequest)
     {
@@ -120,8 +122,28 @@ public class AnimalsController: Controller
                 query = Enumerable.Empty<Animal>().AsQueryable();
             }
         }
+        
+/*emily: easier way?*/
+        if (searchAnimalRequest.MaxAgeByDays != null)
+        {
+            double maxDays = searchAnimalRequest.MaxAgeByDays ?? 0;
+            var earlistDate = DateTime.UtcNow.AddDays(-maxDays);
+            query = query.Where(animal => animal.DateOfBirth >= earlistDate);
+        } 
 
-        var searchResult = query.ToList();
+        if (searchAnimalRequest.MinAgeByDays != null)
+        {
+            double minDays = searchAnimalRequest.MinAgeByDays ?? 0;
+            query = query.Where(animal => animal.DateOfBirth <= DateTime.UtcNow.AddDays(-minDays)).AsQueryable();
+        } 
+
+        if (searchAnimalRequest.PageSize < 1 || searchAnimalRequest.PageNumber < 1)
+        {
+            return BadRequest("Invalid page.");
+        }
+        int start = searchAnimalRequest.PageSize * (searchAnimalRequest.PageNumber - 1);
+
+        var searchResult = query.ToList().GetRange(start, searchAnimalRequest.PageSize).Select(animal => AnimalToResponse(animal));
 
         return Ok(searchResult);
     }
