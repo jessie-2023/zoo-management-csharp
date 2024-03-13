@@ -1,10 +1,13 @@
 using System.Security.Cryptography;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
+
 using ZooManagement.Enums;
 using ZooManagement.Models.Data;
 using ZooManagement.Models.Request;
 using ZooManagement.Models.Response;
+using System.Reflection.Metadata.Ecma335;
 
 namespace ZooManagement.Controllers;
 
@@ -29,6 +32,8 @@ public class AnimalsController: Controller
                 Sex = animal.Sex.ToString().ToLower(),
                 DateOfBirth = animal.DateOfBirth,
                 DateOfAquisition = animal.DateOfAquisition,
+                EnclosureId = animal.EnclosureId,
+                EnclosureType = animal.Enclosure.Type.ToString().ToLower(),
             };
     }
 
@@ -38,6 +43,7 @@ public class AnimalsController: Controller
     {
         var matchingAnimal = _zoo.Animals
             .Include(animal => animal.Species)
+            .Include(animal => animal.Enclosure)
             .SingleOrDefault(animal => animal.Id == id);
         if (matchingAnimal == null)
         {
@@ -46,7 +52,7 @@ public class AnimalsController: Controller
         return Ok(AnimalToResponse(matchingAnimal));
     }
 
-    /* create an endpoint to add an animal to the database given the relevant information */
+    /* create an endpoint to add an animal to the database given the relevant information, , enforce enclosure capacity */
     [HttpPost("add-an-animal")] 
     public IActionResult AddAnimal([FromBody] AddAnimalRequest addAnimalRequest)
     {
@@ -55,19 +61,40 @@ public class AnimalsController: Controller
             return BadRequest("Invalid animal data.");
         }
 
-        var newAnimal = _zoo.Animals.Add(new Animal // adds the new entity (the new Animal object) to the _zoo.Animals DbSet
+        var matchingEnclosure = _zoo.Enclosures // [enclosures] table has no Animals column
+            .Include(enclosure => enclosure.Animals) // has to merge with [animals] table, OR: matchingEnclosure.Animals = [] forever
+            .SingleOrDefault(enclosure => enclosure.Id == addAnimalRequest.EnclosureId);
+
+        if (matchingEnclosure == null)
+        {
+            return BadRequest("The enclosure is not found.");
+        }
+        else if (matchingEnclosure.Animals.Count >= matchingEnclosure.Capacity)
+        {
+            return BadRequest("This enclosure is full. Please choose another one.");
+        }
+
+        var newAnimal = _zoo.Animals.Add(new Animal // adds the new entity (a new Animal object, a new observation/row) to the _zoo.Animals DbSet
         {
             Name = addAnimalRequest.Name,
             SpeciesId = addAnimalRequest.SpeciesId,
             Sex = addAnimalRequest.Sex,
             DateOfBirth = addAnimalRequest.DateOfBirth,
             DateOfAquisition = addAnimalRequest.DateOfAquisition,
+            EnclosureId = addAnimalRequest.EnclosureId,
         }).Entity; // this【Entity】property retrieve the actual entity object that was added      
 
-        _zoo.SaveChangesAsync();
-        
-        
-        return Ok(newAnimal); // Return a success response (you can also return the created animal)
+        _zoo.SaveChanges(); // async?
+
+        return Ok(newAnimal);
+
+        // var newAnimalDuplicate = _zoo.Animals
+        //     .Include(animal => animal.Species)      
+        //     .Include(animal => animal.Enclosure) 
+        //     .ThenInclude(enclosure => enclosure.Animals)  
+        //     .Single(animal => animal.Id == newAnimal.Id);
+
+        // return Ok(newAnimalDuplicate); // Return a success response (you can also return the created animal)
     }
 
     /* create an endpoint to list all the types of animals in the zoo */
@@ -75,10 +102,12 @@ public class AnimalsController: Controller
     public IActionResult ListAll()
     {
         var animals = new List<AnimalResponse> {};
-        foreach (var animal in _zoo.Animals.Include(animal => animal.Species))
+        foreach (var animal in _zoo.Animals.Include(animal => animal.Species).Include(animal => animal.Enclosure))
         {
-            animals.Add(AnimalToResponse(animal));
+            animals.Add(AnimalToResponse(animal)); 
         }
+
+        animals = animals.OrderBy(animal => -animal.EnclosureId).ThenBy(animal => animal.Name).ToList();
 
         return Ok(animals);
     }
@@ -88,7 +117,8 @@ public class AnimalsController: Controller
     [HttpGet("search")]
     public IActionResult Search([FromQuery] SearchAnimalRequest searchAnimalRequest)
     {
-        var query = _zoo.Animals.Include(animal => animal.Species).AsQueryable();
+        var query = _zoo.Animals.Include(animal => animal.Species).Include(animal => animal.Enclosure).AsQueryable();
+
         if (!string.IsNullOrEmpty(searchAnimalRequest.Name))
         {
             query = query.Where(animal => animal.Name.Contains(searchAnimalRequest.Name));
@@ -111,6 +141,18 @@ public class AnimalsController: Controller
             }
         }
 
+        if (!string.IsNullOrEmpty(searchAnimalRequest.EnclosureType))
+        { 
+            if (Enum.TryParse<EnclosureType>(searchAnimalRequest.EnclosureType, ignoreCase: true, out var enclosureType))
+            {
+                query = query.Where(animal => animal.Enclosure.Type == enclosureType);
+            }
+            else
+            {
+                query = Enumerable.Empty<Animal>().AsQueryable();
+            }
+        }
+
         if (!string.IsNullOrEmpty(searchAnimalRequest.SexName))
         { 
             if (Enum.TryParse<Sex>(searchAnimalRequest.SexName, ignoreCase: true, out var sex))
@@ -122,8 +164,7 @@ public class AnimalsController: Controller
                 query = Enumerable.Empty<Animal>().AsQueryable();
             }
         }
-        
-/*emily: easier way?*/
+
         if (searchAnimalRequest.MaxAgeByDays != null)
         {
             double maxDays = searchAnimalRequest.MaxAgeByDays ?? 0;
@@ -137,15 +178,38 @@ public class AnimalsController: Controller
             query = query.Where(animal => animal.DateOfBirth <= DateTime.UtcNow.AddDays(-minDays)).AsQueryable();
         } 
 
+        // /* part 3: Allow order choice*/ 
+        // var orderKey = "SpeciesName";
+        // if (!string.IsNullOrEmpty(searchAnimalRequest.OrderBy))
+        // {
+        //     orderKey = searchAnimalRequest.OrderBy;
+        // }
+        //  // Use reflection to get the property info
+        // PropertyInfo propertyInfo = typeof(AnimalResponse).GetProperty(orderKey);
+        // if (propertyInfo == null)
+        // {
+        //     return BadRequest($"Property '{orderKey}' not found.");
+        // }
+
+        var searchResult = query
+            .ToList() // {w/o} The LINQ expression 'DbSet<Animal>().OrderBy(a => __propertyInfo_0.GetValue(obj: AnimalsController.AnimalToResponse(a),index: null))' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'.
+            .OrderBy(animal => -animal.EnclosureId).ThenBy(animal => animal.Name)
+            .Select(animal => AnimalToResponse(animal))
+            // .OrderBy(animal => propertyInfo.GetValue(animal, null))
+            .ToList(); // {w/o} 'IOrderedEnumerable<AnimalResponse>' does not contain a definition for 'GetRange' and no accessible extension method 'GetRange' accepting a first argument of type 'IOrderedEnumerable<AnimalResponse>' could be found
+        
+        /*page choices */
         if (searchAnimalRequest.PageSize < 1 || searchAnimalRequest.PageNumber < 1)
         {
             return BadRequest("Invalid page.");
         }
         int start = searchAnimalRequest.PageSize * (searchAnimalRequest.PageNumber - 1);
+        var pageResult = searchResult.GetRange(
+                start, 
+                Math.Min(searchAnimalRequest.PageSize, searchResult.Count) // when results count less than page size
+            );
 
-        var searchResult = query.ToList().GetRange(start, searchAnimalRequest.PageSize).Select(animal => AnimalToResponse(animal));
-
-        return Ok(searchResult);
+        return Ok(pageResult);
     }
 
 }

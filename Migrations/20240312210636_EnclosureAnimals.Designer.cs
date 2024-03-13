@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using ZooManagement;
@@ -11,9 +12,11 @@ using ZooManagement;
 namespace ZooManagement.Migrations
 {
     [DbContext(typeof(Zoo))]
-    partial class ZooModelSnapshot : ModelSnapshot
+    [Migration("20240312210636_EnclosureAnimals")]
+    partial class EnclosureAnimals
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -81,19 +84,19 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -20,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(3653),
-                            DateOfBirth = new DateTime(2020, 5, 24, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(3643),
-                            EnclosureId = -4,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7065),
+                            DateOfBirth = new DateTime(2016, 8, 30, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(7039),
+                            EnclosureId = -6,
                             Name = "animal_20",
-                            Sex = 0,
+                            Sex = 1,
                             SpeciesId = -2
                         },
                         new
                         {
                             Id = -21,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(3678),
-                            DateOfBirth = new DateTime(2016, 6, 27, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(3676),
-                            EnclosureId = -6,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7143),
+                            DateOfBirth = new DateTime(2019, 12, 1, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7141),
+                            EnclosureId = -1,
                             Name = "animal_21",
                             Sex = 0,
                             SpeciesId = -2
@@ -101,9 +104,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -22,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(3695),
-                            DateOfBirth = new DateTime(2020, 3, 26, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(3694),
-                            EnclosureId = -2,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7167),
+                            DateOfBirth = new DateTime(2022, 7, 4, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(7166),
+                            EnclosureId = -3,
                             Name = "animal_22",
                             Sex = 0,
                             SpeciesId = -2
@@ -111,9 +114,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -23,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(3714),
-                            DateOfBirth = new DateTime(2023, 5, 18, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(3713),
-                            EnclosureId = -5,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7192),
+                            DateOfBirth = new DateTime(2023, 12, 19, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7190),
+                            EnclosureId = -3,
                             Name = "animal_23",
                             Sex = 1,
                             SpeciesId = -2
@@ -121,48 +124,48 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -24,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(3732),
-                            DateOfBirth = new DateTime(2017, 1, 1, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(3730),
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7212),
+                            DateOfBirth = new DateTime(2021, 7, 9, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(7210),
                             EnclosureId = -3,
                             Name = "animal_24",
-                            Sex = 0,
+                            Sex = 1,
                             SpeciesId = -2
                         },
                         new
                         {
                             Id = -25,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(3748),
-                            DateOfBirth = new DateTime(2022, 11, 26, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(3747),
-                            EnclosureId = -1,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7231),
+                            DateOfBirth = new DateTime(2018, 4, 16, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(7230),
+                            EnclosureId = -4,
                             Name = "animal_25",
-                            Sex = 0,
+                            Sex = 1,
                             SpeciesId = -2
                         },
                         new
                         {
                             Id = -26,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(3766),
-                            DateOfBirth = new DateTime(2018, 2, 24, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(3764),
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7251),
+                            DateOfBirth = new DateTime(2021, 11, 11, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7250),
                             EnclosureId = -1,
                             Name = "animal_26",
-                            Sex = 0,
+                            Sex = 1,
                             SpeciesId = -2
                         },
                         new
                         {
                             Id = -27,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(3785),
-                            DateOfBirth = new DateTime(2017, 10, 30, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(3783),
-                            EnclosureId = -4,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7334),
+                            DateOfBirth = new DateTime(2021, 1, 5, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7333),
+                            EnclosureId = -2,
                             Name = "animal_27",
-                            Sex = 0,
+                            Sex = 1,
                             SpeciesId = -2
                         },
                         new
                         {
                             Id = -28,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(3802),
-                            DateOfBirth = new DateTime(2021, 6, 4, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(3800),
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7355),
+                            DateOfBirth = new DateTime(2021, 9, 28, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(7353),
                             EnclosureId = -1,
                             Name = "animal_28",
                             Sex = 0,
@@ -171,9 +174,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -29,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(3874),
-                            DateOfBirth = new DateTime(2019, 10, 2, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(3873),
-                            EnclosureId = -1,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7375),
+                            DateOfBirth = new DateTime(2023, 5, 7, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(7373),
+                            EnclosureId = -5,
                             Name = "animal_29",
                             Sex = 1,
                             SpeciesId = -2
@@ -181,9 +184,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -30,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(3909),
-                            DateOfBirth = new DateTime(2016, 9, 17, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(3907),
-                            EnclosureId = -5,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7420),
+                            DateOfBirth = new DateTime(2017, 10, 21, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(7418),
+                            EnclosureId = -4,
                             Name = "animal_30",
                             Sex = 1,
                             SpeciesId = -3
@@ -191,19 +194,19 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -31,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(3927),
-                            DateOfBirth = new DateTime(2022, 6, 18, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(3926),
-                            EnclosureId = -3,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7441),
+                            DateOfBirth = new DateTime(2016, 8, 11, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(7439),
+                            EnclosureId = -5,
                             Name = "animal_31",
-                            Sex = 1,
+                            Sex = 0,
                             SpeciesId = -3
                         },
                         new
                         {
                             Id = -32,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(3944),
-                            DateOfBirth = new DateTime(2018, 2, 24, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(3943),
-                            EnclosureId = -2,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7461),
+                            DateOfBirth = new DateTime(2021, 10, 31, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7459),
+                            EnclosureId = -3,
                             Name = "animal_32",
                             Sex = 0,
                             SpeciesId = -3
@@ -211,29 +214,29 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -33,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(3962),
-                            DateOfBirth = new DateTime(2020, 12, 24, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(3960),
-                            EnclosureId = -1,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7629),
+                            DateOfBirth = new DateTime(2016, 3, 9, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7627),
+                            EnclosureId = -5,
                             Name = "animal_33",
-                            Sex = 1,
+                            Sex = 0,
                             SpeciesId = -3
                         },
                         new
                         {
                             Id = -34,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(3979),
-                            DateOfBirth = new DateTime(2022, 12, 22, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(3978),
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7649),
+                            DateOfBirth = new DateTime(2020, 9, 13, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(7647),
                             EnclosureId = -4,
                             Name = "animal_34",
-                            Sex = 1,
+                            Sex = 0,
                             SpeciesId = -3
                         },
                         new
                         {
                             Id = -35,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4003),
-                            DateOfBirth = new DateTime(2024, 1, 17, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4002),
-                            EnclosureId = -5,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7672),
+                            DateOfBirth = new DateTime(2023, 5, 14, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(7671),
+                            EnclosureId = -2,
                             Name = "animal_35",
                             Sex = 0,
                             SpeciesId = -3
@@ -241,19 +244,19 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -36,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4025),
-                            DateOfBirth = new DateTime(2023, 1, 26, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4024),
-                            EnclosureId = -2,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7694),
+                            DateOfBirth = new DateTime(2021, 5, 5, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(7692),
+                            EnclosureId = -4,
                             Name = "animal_36",
-                            Sex = 0,
+                            Sex = 1,
                             SpeciesId = -3
                         },
                         new
                         {
                             Id = -37,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4043),
-                            DateOfBirth = new DateTime(2023, 9, 6, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(4041),
-                            EnclosureId = -6,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7714),
+                            DateOfBirth = new DateTime(2020, 6, 11, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(7712),
+                            EnclosureId = -1,
                             Name = "animal_37",
                             Sex = 1,
                             SpeciesId = -3
@@ -261,9 +264,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -38,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4060),
-                            DateOfBirth = new DateTime(2020, 3, 22, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4059),
-                            EnclosureId = -3,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7734),
+                            DateOfBirth = new DateTime(2018, 4, 23, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(7733),
+                            EnclosureId = -2,
                             Name = "animal_38",
                             Sex = 0,
                             SpeciesId = -3
@@ -271,29 +274,29 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -39,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4077),
-                            DateOfBirth = new DateTime(2021, 9, 30, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(4075),
-                            EnclosureId = -1,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7755),
+                            DateOfBirth = new DateTime(2019, 3, 30, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7753),
+                            EnclosureId = -3,
                             Name = "animal_39",
-                            Sex = 0,
+                            Sex = 1,
                             SpeciesId = -3
                         },
                         new
                         {
                             Id = -40,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4108),
-                            DateOfBirth = new DateTime(2020, 2, 16, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4106),
-                            EnclosureId = -2,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7793),
+                            DateOfBirth = new DateTime(2023, 10, 22, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(7791),
+                            EnclosureId = -3,
                             Name = "animal_40",
-                            Sex = 1,
+                            Sex = 0,
                             SpeciesId = -4
                         },
                         new
                         {
                             Id = -41,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4125),
-                            DateOfBirth = new DateTime(2020, 1, 30, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4124),
-                            EnclosureId = -5,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7814),
+                            DateOfBirth = new DateTime(2022, 3, 24, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7813),
+                            EnclosureId = -2,
                             Name = "animal_41",
                             Sex = 1,
                             SpeciesId = -4
@@ -301,9 +304,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -42,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4143),
-                            DateOfBirth = new DateTime(2018, 11, 16, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4141),
-                            EnclosureId = -6,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7833),
+                            DateOfBirth = new DateTime(2020, 7, 21, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(7832),
+                            EnclosureId = -5,
                             Name = "animal_42",
                             Sex = 0,
                             SpeciesId = -4
@@ -311,9 +314,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -43,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4160),
-                            DateOfBirth = new DateTime(2022, 11, 24, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4159),
-                            EnclosureId = -2,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7853),
+                            DateOfBirth = new DateTime(2018, 7, 2, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(7852),
+                            EnclosureId = -5,
                             Name = "animal_43",
                             Sex = 0,
                             SpeciesId = -4
@@ -321,19 +324,19 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -44,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4178),
-                            DateOfBirth = new DateTime(2021, 2, 9, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4176),
-                            EnclosureId = -1,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7874),
+                            DateOfBirth = new DateTime(2016, 4, 25, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(7873),
+                            EnclosureId = -4,
                             Name = "animal_44",
-                            Sex = 0,
+                            Sex = 1,
                             SpeciesId = -4
                         },
                         new
                         {
                             Id = -45,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4195),
-                            DateOfBirth = new DateTime(2024, 2, 6, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4194),
-                            EnclosureId = -1,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7895),
+                            DateOfBirth = new DateTime(2019, 10, 14, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(7893),
+                            EnclosureId = -4,
                             Name = "animal_45",
                             Sex = 0,
                             SpeciesId = -4
@@ -341,9 +344,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -46,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4213),
-                            DateOfBirth = new DateTime(2023, 8, 22, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(4211),
-                            EnclosureId = -3,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7915),
+                            DateOfBirth = new DateTime(2019, 9, 20, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(7913),
+                            EnclosureId = -2,
                             Name = "animal_46",
                             Sex = 1,
                             SpeciesId = -4
@@ -351,8 +354,8 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -47,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4230),
-                            DateOfBirth = new DateTime(2017, 9, 7, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(4229),
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(7989),
+                            DateOfBirth = new DateTime(2023, 7, 2, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(7988),
                             EnclosureId = -2,
                             Name = "animal_47",
                             Sex = 0,
@@ -361,19 +364,19 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -48,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4247),
-                            DateOfBirth = new DateTime(2023, 8, 16, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(4246),
-                            EnclosureId = -1,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8011),
+                            DateOfBirth = new DateTime(2020, 3, 2, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8010),
+                            EnclosureId = -3,
                             Name = "animal_48",
-                            Sex = 1,
+                            Sex = 0,
                             SpeciesId = -4
                         },
                         new
                         {
                             Id = -49,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4265),
-                            DateOfBirth = new DateTime(2023, 2, 1, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4264),
-                            EnclosureId = -2,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8032),
+                            DateOfBirth = new DateTime(2021, 12, 7, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8030),
+                            EnclosureId = -4,
                             Name = "animal_49",
                             Sex = 1,
                             SpeciesId = -4
@@ -381,29 +384,29 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -50,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4358),
-                            DateOfBirth = new DateTime(2016, 2, 1, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4356),
-                            EnclosureId = -5,
-                            Name = "animal_50",
-                            Sex = 0,
-                            SpeciesId = -5
-                        },
-                        new
-                        {
-                            Id = -51,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4378),
-                            DateOfBirth = new DateTime(2018, 6, 26, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(4377),
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8070),
+                            DateOfBirth = new DateTime(2024, 1, 26, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8068),
                             EnclosureId = -1,
-                            Name = "animal_51",
+                            Name = "animal_50",
                             Sex = 1,
                             SpeciesId = -5
                         },
                         new
                         {
+                            Id = -51,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8093),
+                            DateOfBirth = new DateTime(2020, 8, 16, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(8092),
+                            EnclosureId = -3,
+                            Name = "animal_51",
+                            Sex = 0,
+                            SpeciesId = -5
+                        },
+                        new
+                        {
                             Id = -52,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4396),
-                            DateOfBirth = new DateTime(2021, 4, 30, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(4394),
-                            EnclosureId = -5,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8115),
+                            DateOfBirth = new DateTime(2022, 5, 26, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(8114),
+                            EnclosureId = -1,
                             Name = "animal_52",
                             Sex = 0,
                             SpeciesId = -5
@@ -411,9 +414,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -53,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4413),
-                            DateOfBirth = new DateTime(2021, 7, 13, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(4411),
-                            EnclosureId = -2,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8136),
+                            DateOfBirth = new DateTime(2018, 12, 2, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8134),
+                            EnclosureId = -6,
                             Name = "animal_53",
                             Sex = 1,
                             SpeciesId = -5
@@ -421,19 +424,19 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -54,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4431),
-                            DateOfBirth = new DateTime(2020, 1, 30, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4429),
-                            EnclosureId = -2,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8156),
+                            DateOfBirth = new DateTime(2020, 4, 2, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(8155),
+                            EnclosureId = -4,
                             Name = "animal_54",
-                            Sex = 0,
+                            Sex = 1,
                             SpeciesId = -5
                         },
                         new
                         {
                             Id = -55,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4448),
-                            DateOfBirth = new DateTime(2018, 2, 24, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4447),
-                            EnclosureId = -2,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8176),
+                            DateOfBirth = new DateTime(2021, 12, 11, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8175),
+                            EnclosureId = -4,
                             Name = "animal_55",
                             Sex = 0,
                             SpeciesId = -5
@@ -441,9 +444,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -56,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4466),
-                            DateOfBirth = new DateTime(2018, 8, 29, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(4465),
-                            EnclosureId = -3,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8197),
+                            DateOfBirth = new DateTime(2021, 9, 25, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(8195),
+                            EnclosureId = -6,
                             Name = "animal_56",
                             Sex = 0,
                             SpeciesId = -5
@@ -451,9 +454,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -57,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4484),
-                            DateOfBirth = new DateTime(2019, 10, 26, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(4482),
-                            EnclosureId = -4,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8218),
+                            DateOfBirth = new DateTime(2023, 1, 17, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8216),
+                            EnclosureId = -3,
                             Name = "animal_57",
                             Sex = 0,
                             SpeciesId = -5
@@ -461,9 +464,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -58,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4506),
-                            DateOfBirth = new DateTime(2019, 3, 25, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4505),
-                            EnclosureId = -6,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8237),
+                            DateOfBirth = new DateTime(2019, 3, 24, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8236),
+                            EnclosureId = -2,
                             Name = "animal_58",
                             Sex = 0,
                             SpeciesId = -5
@@ -471,9 +474,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -59,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4524),
-                            DateOfBirth = new DateTime(2023, 2, 23, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4522),
-                            EnclosureId = -1,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8257),
+                            DateOfBirth = new DateTime(2023, 12, 14, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8256),
+                            EnclosureId = -5,
                             Name = "animal_59",
                             Sex = 0,
                             SpeciesId = -5
@@ -481,8 +484,8 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -60,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4556),
-                            DateOfBirth = new DateTime(2019, 8, 4, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(4554),
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8299),
+                            DateOfBirth = new DateTime(2022, 4, 24, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(8298),
                             EnclosureId = -5,
                             Name = "animal_60",
                             Sex = 0,
@@ -491,29 +494,29 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -61,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4574),
-                            DateOfBirth = new DateTime(2022, 7, 11, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(4573),
-                            EnclosureId = -6,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8320),
+                            DateOfBirth = new DateTime(2017, 1, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8319),
+                            EnclosureId = -4,
                             Name = "animal_61",
-                            Sex = 1,
-                            SpeciesId = -6
-                        },
-                        new
-                        {
-                            Id = -62,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4592),
-                            DateOfBirth = new DateTime(2023, 2, 6, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4591),
-                            EnclosureId = -2,
-                            Name = "animal_62",
                             Sex = 0,
                             SpeciesId = -6
                         },
                         new
                         {
+                            Id = -62,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8340),
+                            DateOfBirth = new DateTime(2019, 9, 15, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(8339),
+                            EnclosureId = -4,
+                            Name = "animal_62",
+                            Sex = 1,
+                            SpeciesId = -6
+                        },
+                        new
+                        {
                             Id = -63,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4610),
-                            DateOfBirth = new DateTime(2020, 4, 2, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(4609),
-                            EnclosureId = -1,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8360),
+                            DateOfBirth = new DateTime(2018, 4, 26, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(8359),
+                            EnclosureId = -3,
                             Name = "animal_63",
                             Sex = 0,
                             SpeciesId = -6
@@ -521,19 +524,19 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -64,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4627),
-                            DateOfBirth = new DateTime(2023, 5, 12, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(4626),
-                            EnclosureId = -2,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8380),
+                            DateOfBirth = new DateTime(2018, 11, 25, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8379),
+                            EnclosureId = -5,
                             Name = "animal_64",
-                            Sex = 1,
+                            Sex = 0,
                             SpeciesId = -6
                         },
                         new
                         {
                             Id = -65,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4645),
-                            DateOfBirth = new DateTime(2020, 6, 23, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(4643),
-                            EnclosureId = -5,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8400),
+                            DateOfBirth = new DateTime(2018, 6, 29, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(8399),
+                            EnclosureId = -6,
                             Name = "animal_65",
                             Sex = 0,
                             SpeciesId = -6
@@ -541,9 +544,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -66,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4662),
-                            DateOfBirth = new DateTime(2023, 1, 17, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4661),
-                            EnclosureId = -5,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8421),
+                            DateOfBirth = new DateTime(2022, 10, 8, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(8420),
+                            EnclosureId = -3,
                             Name = "animal_66",
                             Sex = 0,
                             SpeciesId = -6
@@ -551,9 +554,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -67,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4679),
-                            DateOfBirth = new DateTime(2020, 7, 27, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(4678),
-                            EnclosureId = -4,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8489),
+                            DateOfBirth = new DateTime(2018, 3, 23, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8487),
+                            EnclosureId = -3,
                             Name = "animal_67",
                             Sex = 0,
                             SpeciesId = -6
@@ -561,19 +564,19 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -68,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4697),
-                            DateOfBirth = new DateTime(2020, 11, 12, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4696),
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8511),
+                            DateOfBirth = new DateTime(2018, 6, 28, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(8510),
                             EnclosureId = -3,
                             Name = "animal_68",
-                            Sex = 1,
+                            Sex = 0,
                             SpeciesId = -6
                         },
                         new
                         {
                             Id = -69,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4715),
-                            DateOfBirth = new DateTime(2023, 11, 18, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4713),
-                            EnclosureId = -5,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8532),
+                            DateOfBirth = new DateTime(2016, 1, 13, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8530),
+                            EnclosureId = -3,
                             Name = "animal_69",
                             Sex = 1,
                             SpeciesId = -6
@@ -581,8 +584,8 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -70,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4789),
-                            DateOfBirth = new DateTime(2021, 5, 20, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(4787),
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8570),
+                            DateOfBirth = new DateTime(2019, 4, 24, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(8568),
                             EnclosureId = -3,
                             Name = "animal_70",
                             Sex = 0,
@@ -591,9 +594,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -71,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4808),
-                            DateOfBirth = new DateTime(2021, 10, 16, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(4806),
-                            EnclosureId = -6,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8597),
+                            DateOfBirth = new DateTime(2021, 12, 13, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8594),
+                            EnclosureId = -2,
                             Name = "animal_71",
                             Sex = 0,
                             SpeciesId = -7
@@ -601,9 +604,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -72,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4826),
-                            DateOfBirth = new DateTime(2023, 2, 27, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4825),
-                            EnclosureId = -4,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8658),
+                            DateOfBirth = new DateTime(2018, 5, 21, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(8648),
+                            EnclosureId = -3,
                             Name = "animal_72",
                             Sex = 0,
                             SpeciesId = -7
@@ -611,19 +614,19 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -73,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4844),
-                            DateOfBirth = new DateTime(2023, 10, 29, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4842),
-                            EnclosureId = -1,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8735),
+                            DateOfBirth = new DateTime(2022, 11, 14, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8732),
+                            EnclosureId = -5,
                             Name = "animal_73",
-                            Sex = 1,
+                            Sex = 0,
                             SpeciesId = -7
                         },
                         new
                         {
                             Id = -74,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4863),
-                            DateOfBirth = new DateTime(2017, 1, 19, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4862),
-                            EnclosureId = -1,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8783),
+                            DateOfBirth = new DateTime(2020, 5, 2, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(8781),
+                            EnclosureId = -3,
                             Name = "animal_74",
                             Sex = 1,
                             SpeciesId = -7
@@ -631,9 +634,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -75,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4880),
-                            DateOfBirth = new DateTime(2022, 2, 2, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4879),
-                            EnclosureId = -3,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8888),
+                            DateOfBirth = new DateTime(2017, 5, 26, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(8878),
+                            EnclosureId = -4,
                             Name = "animal_75",
                             Sex = 0,
                             SpeciesId = -7
@@ -641,8 +644,8 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -76,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4897),
-                            DateOfBirth = new DateTime(2020, 2, 8, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4896),
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8926),
+                            DateOfBirth = new DateTime(2016, 8, 30, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(8924),
                             EnclosureId = -1,
                             Name = "animal_76",
                             Sex = 0,
@@ -651,9 +654,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -77,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4914),
-                            DateOfBirth = new DateTime(2019, 6, 23, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(4913),
-                            EnclosureId = -6,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8948),
+                            DateOfBirth = new DateTime(2022, 10, 9, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(8947),
+                            EnclosureId = -5,
                             Name = "animal_77",
                             Sex = 0,
                             SpeciesId = -7
@@ -661,29 +664,29 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -78,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4932),
-                            DateOfBirth = new DateTime(2019, 8, 4, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(4931),
-                            EnclosureId = -6,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8968),
+                            DateOfBirth = new DateTime(2017, 3, 15, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8967),
+                            EnclosureId = -2,
                             Name = "animal_78",
-                            Sex = 1,
-                            SpeciesId = -7
-                        },
-                        new
-                        {
-                            Id = -79,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4949),
-                            DateOfBirth = new DateTime(2022, 12, 24, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4948),
-                            EnclosureId = -5,
-                            Name = "animal_79",
                             Sex = 0,
                             SpeciesId = -7
                         },
                         new
                         {
+                            Id = -79,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(8989),
+                            DateOfBirth = new DateTime(2016, 10, 8, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(8988),
+                            EnclosureId = -3,
+                            Name = "animal_79",
+                            Sex = 1,
+                            SpeciesId = -7
+                        },
+                        new
+                        {
                             Id = -80,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4979),
-                            DateOfBirth = new DateTime(2024, 3, 3, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4978),
-                            EnclosureId = -6,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9037),
+                            DateOfBirth = new DateTime(2019, 6, 11, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(9035),
+                            EnclosureId = -2,
                             Name = "animal_80",
                             Sex = 0,
                             SpeciesId = -8
@@ -691,9 +694,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -81,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(4997),
-                            DateOfBirth = new DateTime(2017, 4, 5, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(4996),
-                            EnclosureId = -4,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9059),
+                            DateOfBirth = new DateTime(2023, 7, 9, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(9057),
+                            EnclosureId = -3,
                             Name = "animal_81",
                             Sex = 1,
                             SpeciesId = -8
@@ -701,29 +704,29 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -82,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5015),
-                            DateOfBirth = new DateTime(2016, 12, 15, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5013),
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9080),
+                            DateOfBirth = new DateTime(2020, 10, 6, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(9078),
                             EnclosureId = -4,
                             Name = "animal_82",
-                            Sex = 1,
-                            SpeciesId = -8
-                        },
-                        new
-                        {
-                            Id = -83,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5034),
-                            DateOfBirth = new DateTime(2021, 1, 21, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5032),
-                            EnclosureId = -3,
-                            Name = "animal_83",
                             Sex = 0,
                             SpeciesId = -8
                         },
                         new
                         {
+                            Id = -83,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9105),
+                            DateOfBirth = new DateTime(2022, 10, 15, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(9103),
+                            EnclosureId = -4,
+                            Name = "animal_83",
+                            Sex = 1,
+                            SpeciesId = -8
+                        },
+                        new
+                        {
                             Id = -84,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5052),
-                            DateOfBirth = new DateTime(2019, 7, 8, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(5051),
-                            EnclosureId = -2,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9125),
+                            DateOfBirth = new DateTime(2017, 6, 16, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(9124),
+                            EnclosureId = -6,
                             Name = "animal_84",
                             Sex = 0,
                             SpeciesId = -8
@@ -731,9 +734,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -85,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5070),
-                            DateOfBirth = new DateTime(2021, 4, 10, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(5068),
-                            EnclosureId = -6,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9146),
+                            DateOfBirth = new DateTime(2023, 10, 18, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(9144),
+                            EnclosureId = -4,
                             Name = "animal_85",
                             Sex = 0,
                             SpeciesId = -8
@@ -741,19 +744,19 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -86,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5087),
-                            DateOfBirth = new DateTime(2023, 11, 28, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5086),
-                            EnclosureId = -5,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9324),
+                            DateOfBirth = new DateTime(2022, 3, 13, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9322),
+                            EnclosureId = -4,
                             Name = "animal_86",
-                            Sex = 1,
+                            Sex = 0,
                             SpeciesId = -8
                         },
                         new
                         {
                             Id = -87,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5105),
-                            DateOfBirth = new DateTime(2017, 2, 19, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5103),
-                            EnclosureId = -3,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9345),
+                            DateOfBirth = new DateTime(2019, 9, 12, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(9343),
+                            EnclosureId = -5,
                             Name = "animal_87",
                             Sex = 1,
                             SpeciesId = -8
@@ -761,29 +764,29 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -88,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5122),
-                            DateOfBirth = new DateTime(2016, 5, 14, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(5121),
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9365),
+                            DateOfBirth = new DateTime(2018, 6, 11, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(9363),
                             EnclosureId = -2,
                             Name = "animal_88",
-                            Sex = 1,
-                            SpeciesId = -8
-                        },
-                        new
-                        {
-                            Id = -89,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5182),
-                            DateOfBirth = new DateTime(2020, 4, 18, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(5181),
-                            EnclosureId = -3,
-                            Name = "animal_89",
                             Sex = 0,
                             SpeciesId = -8
                         },
                         new
                         {
+                            Id = -89,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9385),
+                            DateOfBirth = new DateTime(2023, 1, 17, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9384),
+                            EnclosureId = -4,
+                            Name = "animal_89",
+                            Sex = 1,
+                            SpeciesId = -8
+                        },
+                        new
+                        {
                             Id = -90,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5219),
-                            DateOfBirth = new DateTime(2022, 12, 29, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5218),
-                            EnclosureId = -6,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9430),
+                            DateOfBirth = new DateTime(2019, 9, 20, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(9428),
+                            EnclosureId = -2,
                             Name = "animal_90",
                             Sex = 0,
                             SpeciesId = -9
@@ -791,9 +794,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -91,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5238),
-                            DateOfBirth = new DateTime(2022, 10, 26, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(5236),
-                            EnclosureId = -6,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9451),
+                            DateOfBirth = new DateTime(2019, 7, 20, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(9450),
+                            EnclosureId = -5,
                             Name = "animal_91",
                             Sex = 1,
                             SpeciesId = -9
@@ -801,9 +804,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -92,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5256),
-                            DateOfBirth = new DateTime(2019, 10, 8, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(5255),
-                            EnclosureId = -6,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9471),
+                            DateOfBirth = new DateTime(2020, 12, 26, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9470),
+                            EnclosureId = -5,
                             Name = "animal_92",
                             Sex = 0,
                             SpeciesId = -9
@@ -811,9 +814,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -93,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5274),
-                            DateOfBirth = new DateTime(2016, 7, 30, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(5272),
-                            EnclosureId = -6,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9491),
+                            DateOfBirth = new DateTime(2019, 6, 8, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(9489),
+                            EnclosureId = -3,
                             Name = "animal_93",
                             Sex = 1,
                             SpeciesId = -9
@@ -821,9 +824,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -94,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5291),
-                            DateOfBirth = new DateTime(2018, 9, 4, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(5290),
-                            EnclosureId = -6,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9511),
+                            DateOfBirth = new DateTime(2024, 2, 1, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9510),
+                            EnclosureId = -2,
                             Name = "animal_94",
                             Sex = 1,
                             SpeciesId = -9
@@ -831,9 +834,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -95,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5309),
-                            DateOfBirth = new DateTime(2020, 7, 1, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(5307),
-                            EnclosureId = -3,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9531),
+                            DateOfBirth = new DateTime(2016, 3, 5, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9530),
+                            EnclosureId = -4,
                             Name = "animal_95",
                             Sex = 1,
                             SpeciesId = -9
@@ -841,19 +844,19 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -96,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5326),
-                            DateOfBirth = new DateTime(2020, 11, 14, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5324),
-                            EnclosureId = -6,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9551),
+                            DateOfBirth = new DateTime(2023, 10, 10, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(9550),
+                            EnclosureId = -1,
                             Name = "animal_96",
-                            Sex = 0,
+                            Sex = 1,
                             SpeciesId = -9
                         },
                         new
                         {
                             Id = -97,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5343),
-                            DateOfBirth = new DateTime(2017, 11, 19, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5342),
-                            EnclosureId = -3,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9571),
+                            DateOfBirth = new DateTime(2022, 5, 14, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(9569),
+                            EnclosureId = -2,
                             Name = "animal_97",
                             Sex = 0,
                             SpeciesId = -9
@@ -861,19 +864,19 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -98,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5361),
-                            DateOfBirth = new DateTime(2022, 11, 8, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5360),
-                            EnclosureId = -2,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9591),
+                            DateOfBirth = new DateTime(2017, 2, 14, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9590),
+                            EnclosureId = -6,
                             Name = "animal_98",
-                            Sex = 1,
+                            Sex = 0,
                             SpeciesId = -9
                         },
                         new
                         {
                             Id = -99,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5379),
-                            DateOfBirth = new DateTime(2016, 12, 26, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5377),
-                            EnclosureId = -5,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9611),
+                            DateOfBirth = new DateTime(2017, 6, 15, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(9610),
+                            EnclosureId = -6,
                             Name = "animal_99",
                             Sex = 0,
                             SpeciesId = -9
@@ -881,9 +884,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -100,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5411),
-                            DateOfBirth = new DateTime(2021, 9, 11, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(5409),
-                            EnclosureId = -6,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9654),
+                            DateOfBirth = new DateTime(2020, 8, 13, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(9652),
+                            EnclosureId = -1,
                             Name = "animal_100",
                             Sex = 0,
                             SpeciesId = -10
@@ -891,9 +894,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -101,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5429),
-                            DateOfBirth = new DateTime(2022, 6, 24, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(5428),
-                            EnclosureId = -2,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9674),
+                            DateOfBirth = new DateTime(2015, 12, 27, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9673),
+                            EnclosureId = -4,
                             Name = "animal_101",
                             Sex = 0,
                             SpeciesId = -10
@@ -901,19 +904,19 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -102,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5447),
-                            DateOfBirth = new DateTime(2018, 7, 30, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(5446),
-                            EnclosureId = -1,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9694),
+                            DateOfBirth = new DateTime(2016, 9, 28, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(9692),
+                            EnclosureId = -6,
                             Name = "animal_102",
-                            Sex = 1,
+                            Sex = 0,
                             SpeciesId = -10
                         },
                         new
                         {
                             Id = -103,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5465),
-                            DateOfBirth = new DateTime(2016, 8, 11, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(5464),
-                            EnclosureId = -3,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9714),
+                            DateOfBirth = new DateTime(2022, 2, 26, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9713),
+                            EnclosureId = -5,
                             Name = "animal_103",
                             Sex = 1,
                             SpeciesId = -10
@@ -921,9 +924,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -104,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5482),
-                            DateOfBirth = new DateTime(2016, 1, 27, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5481),
-                            EnclosureId = -1,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9735),
+                            DateOfBirth = new DateTime(2019, 10, 4, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(9734),
+                            EnclosureId = -2,
                             Name = "animal_104",
                             Sex = 1,
                             SpeciesId = -10
@@ -931,9 +934,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -105,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5500),
-                            DateOfBirth = new DateTime(2021, 12, 29, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5499),
-                            EnclosureId = -6,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9755),
+                            DateOfBirth = new DateTime(2022, 8, 24, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(9754),
+                            EnclosureId = -3,
                             Name = "animal_105",
                             Sex = 0,
                             SpeciesId = -10
@@ -941,9 +944,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -106,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5518),
-                            DateOfBirth = new DateTime(2016, 11, 2, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5516),
-                            EnclosureId = -2,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9776),
+                            DateOfBirth = new DateTime(2019, 10, 23, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(9775),
+                            EnclosureId = -1,
                             Name = "animal_106",
                             Sex = 0,
                             SpeciesId = -10
@@ -951,19 +954,19 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -107,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5535),
-                            DateOfBirth = new DateTime(2022, 8, 18, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(5534),
-                            EnclosureId = -1,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9865),
+                            DateOfBirth = new DateTime(2022, 2, 2, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9863),
+                            EnclosureId = -6,
                             Name = "animal_107",
-                            Sex = 0,
+                            Sex = 1,
                             SpeciesId = -10
                         },
                         new
                         {
                             Id = -108,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5553),
-                            DateOfBirth = new DateTime(2022, 12, 8, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5551),
-                            EnclosureId = -1,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9885),
+                            DateOfBirth = new DateTime(2022, 10, 10, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(9884),
+                            EnclosureId = -2,
                             Name = "animal_108",
                             Sex = 1,
                             SpeciesId = -10
@@ -971,18 +974,18 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -109,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5570),
-                            DateOfBirth = new DateTime(2018, 9, 2, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(5568),
-                            EnclosureId = -1,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9905),
+                            DateOfBirth = new DateTime(2022, 12, 26, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9904),
+                            EnclosureId = -6,
                             Name = "animal_109",
-                            Sex = 0,
+                            Sex = 1,
                             SpeciesId = -10
                         },
                         new
                         {
                             Id = -110,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5644),
-                            DateOfBirth = new DateTime(2019, 1, 23, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5642),
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9943),
+                            DateOfBirth = new DateTime(2016, 1, 23, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9941),
                             EnclosureId = -2,
                             Name = "animal_110",
                             Sex = 0,
@@ -991,18 +994,18 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -111,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5662),
-                            DateOfBirth = new DateTime(2023, 2, 28, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5661),
-                            EnclosureId = -5,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9964),
+                            DateOfBirth = new DateTime(2022, 11, 22, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9962),
+                            EnclosureId = -4,
                             Name = "animal_111",
-                            Sex = 0,
+                            Sex = 1,
                             SpeciesId = -11
                         },
                         new
                         {
                             Id = -112,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5679),
-                            DateOfBirth = new DateTime(2021, 10, 7, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(5678),
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 844, DateTimeKind.Utc).AddTicks(9984),
+                            DateOfBirth = new DateTime(2020, 9, 22, 20, 6, 35, 844, DateTimeKind.Utc).AddTicks(9982),
                             EnclosureId = -4,
                             Name = "animal_112",
                             Sex = 1,
@@ -1011,9 +1014,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -113,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5697),
-                            DateOfBirth = new DateTime(2023, 8, 20, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(5695),
-                            EnclosureId = -5,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 845, DateTimeKind.Utc).AddTicks(4),
+                            DateOfBirth = new DateTime(2020, 10, 19, 20, 6, 35, 845, DateTimeKind.Utc).AddTicks(3),
+                            EnclosureId = -3,
                             Name = "animal_113",
                             Sex = 0,
                             SpeciesId = -11
@@ -1021,19 +1024,19 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -114,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5714),
-                            DateOfBirth = new DateTime(2016, 2, 14, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5712),
-                            EnclosureId = -6,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 845, DateTimeKind.Utc).AddTicks(24),
+                            DateOfBirth = new DateTime(2022, 3, 4, 21, 6, 35, 845, DateTimeKind.Utc).AddTicks(23),
+                            EnclosureId = -1,
                             Name = "animal_114",
-                            Sex = 1,
+                            Sex = 0,
                             SpeciesId = -11
                         },
                         new
                         {
                             Id = -115,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5732),
-                            DateOfBirth = new DateTime(2016, 5, 14, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(5730),
-                            EnclosureId = -3,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 845, DateTimeKind.Utc).AddTicks(45),
+                            DateOfBirth = new DateTime(2020, 5, 10, 20, 6, 35, 845, DateTimeKind.Utc).AddTicks(43),
+                            EnclosureId = -5,
                             Name = "animal_115",
                             Sex = 1,
                             SpeciesId = -11
@@ -1041,9 +1044,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -116,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5749),
-                            DateOfBirth = new DateTime(2018, 2, 7, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5748),
-                            EnclosureId = -5,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 845, DateTimeKind.Utc).AddTicks(65),
+                            DateOfBirth = new DateTime(2020, 9, 18, 20, 6, 35, 845, DateTimeKind.Utc).AddTicks(64),
+                            EnclosureId = -2,
                             Name = "animal_116",
                             Sex = 1,
                             SpeciesId = -11
@@ -1051,9 +1054,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -117,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5766),
-                            DateOfBirth = new DateTime(2022, 1, 12, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5765),
-                            EnclosureId = -1,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 845, DateTimeKind.Utc).AddTicks(85),
+                            DateOfBirth = new DateTime(2021, 10, 9, 20, 6, 35, 845, DateTimeKind.Utc).AddTicks(83),
+                            EnclosureId = -2,
                             Name = "animal_117",
                             Sex = 0,
                             SpeciesId = -11
@@ -1061,9 +1064,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -118,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5783),
-                            DateOfBirth = new DateTime(2017, 5, 5, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(5782),
-                            EnclosureId = -5,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 845, DateTimeKind.Utc).AddTicks(105),
+                            DateOfBirth = new DateTime(2020, 10, 12, 20, 6, 35, 845, DateTimeKind.Utc).AddTicks(104),
+                            EnclosureId = -4,
                             Name = "animal_118",
                             Sex = 1,
                             SpeciesId = -11
@@ -1071,9 +1074,9 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -119,
-                            DateOfAquisition = new DateTime(2024, 3, 13, 14, 20, 59, 760, DateTimeKind.Utc).AddTicks(5801),
-                            DateOfBirth = new DateTime(2017, 10, 7, 13, 20, 59, 760, DateTimeKind.Utc).AddTicks(5800),
-                            EnclosureId = -6,
+                            DateOfAquisition = new DateTime(2024, 3, 12, 21, 6, 35, 845, DateTimeKind.Utc).AddTicks(126),
+                            DateOfBirth = new DateTime(2021, 11, 12, 21, 6, 35, 845, DateTimeKind.Utc).AddTicks(124),
+                            EnclosureId = -2,
                             Name = "animal_119",
                             Sex = 0,
                             SpeciesId = -11
@@ -1108,19 +1111,19 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -2,
-                            Capacity = 50,
+                            Capacity = 10,
                             Type = 1
                         },
                         new
                         {
                             Id = -3,
-                            Capacity = 40,
+                            Capacity = 10,
                             Type = 2
                         },
                         new
                         {
                             Id = -4,
-                            Capacity = 6,
+                            Capacity = 10,
                             Type = 3
                         },
                         new
@@ -1132,7 +1135,7 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -6,
-                            Capacity = 1000,
+                            Capacity = 10,
                             Type = 5
                         });
                 });
@@ -1166,25 +1169,25 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -2,
-                            Classification = 5,
+                            Classification = 4,
                             Name = "species_2"
                         },
                         new
                         {
                             Id = -3,
-                            Classification = 3,
+                            Classification = 2,
                             Name = "species_3"
                         },
                         new
                         {
                             Id = -4,
-                            Classification = 3,
+                            Classification = 0,
                             Name = "species_4"
                         },
                         new
                         {
                             Id = -5,
-                            Classification = 3,
+                            Classification = 2,
                             Name = "species_5"
                         },
                         new
@@ -1202,7 +1205,7 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -8,
-                            Classification = 4,
+                            Classification = 2,
                             Name = "species_8"
                         },
                         new
@@ -1214,13 +1217,13 @@ namespace ZooManagement.Migrations
                         new
                         {
                             Id = -10,
-                            Classification = 5,
+                            Classification = 0,
                             Name = "species_10"
                         },
                         new
                         {
                             Id = -11,
-                            Classification = 1,
+                            Classification = 2,
                             Name = "species_11"
                         });
                 });

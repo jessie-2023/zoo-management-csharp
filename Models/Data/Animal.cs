@@ -20,4 +20,8 @@ public class Animal
 
     public required DateTime DateOfAquisition { get; set; }
     
+    public int EnclosureId { get; set; }
+
+    [ForeignKey(nameof(EnclosureId))]
+    public Enclosure Enclosure { get; set; } = null!;
 }

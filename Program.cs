@@ -1,8 +1,12 @@
+using System.Text.Json.Serialization;
 using ZooManagement;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options => 
+{ // ignore recursive injections in relational tables
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles; 
+});
 
 builder.Services.AddDbContext<Zoo>();
 
